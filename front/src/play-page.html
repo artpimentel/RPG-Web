@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG | character_name</title>
+
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/pages/play-page/play-page.css">
+    <link rel="stylesheet" href="./styles/pages/play-page/sections/character-scroll/character-scroll.css">
+    <link rel="stylesheet" href="./styles/pages/play-page/sections/equipament-scroll/equipament-scroll.css">
+
+    <link rel="stylesheet" href="./styles/elements/scrolls/large-scroll.css">
+    <link rel="stylesheet" href="./styles/elements/scrolls/medium-scroll.css">
+    <link rel="stylesheet" href="./styles/elements/character-body.css">
+    <link rel="stylesheet" href="./styles/elements/backpack.css">
+
+    <script src="./scripts/global.js" defer></script>
+</head>
+<body>
+    <main id="main-content">
+        <section id="large-scrolls">
+            <article id="character-scroll" class="large-scroll">
+                <button class="large-scroll-button">Personagem</button>
+                <section id="character-scroll-content" class="large-scroll-content">
+                    <div id="character-scroll-content-column1">
+                        <h2>character_name</h2>
+                        <p><span>character_aptitude</span></p>
+                        <div id="character-exp">
+                            <p>Nível <span>0</span></p>
+                            <div id="exp-bar"></div>
+                        </div>
+                        <div class="character-visual-display">
+
+                        </div>
+                        <div class="character-status">
+                            <i></i>
+                            <div class="character-status-display"></div>
+                        </div>
+                        <div class="character-status">
+                            <i></i>
+                            <div class="character-status-display"></div>
+                        </div>
+                        <div id="character-infos">
+                            <p><span>character_race</span> <span>character_genetic</span></p>
+                        </div>
+                    </div>
+                    <div id="character-scroll-content-column2">
+                        <h2>Atributos</h2>
+                        <ul id="character-attributes">
+                            <li class="character-attribute">
+                                <p>Agilidade <span>0</span></p>
+                                <div class="attribute-buttons">
+                                    <button class="decrement-button">-</button>
+                                    <button class="increment-button">+</button>
+                                </div>
+                            </li>
+                            <li class="character-attribute">
+                                <p>Cognição <span>0</span></p>
+                                <div class="attribute-buttons">
+                                    <button class="decrement-button">-</button>
+                                    <button class="increment-button">+</button>
+                                </div>
+                            </li>
+                            <li class="character-attribute">
+                                <p>Força <span>0</span></p>
+                                <div class="attribute-buttons">
+                                    <button class="decrement-button">-</button>
+                                    <button class="increment-button">+</button>
+                                </div>
+                            </li>
+                            <li class="character-attribute">
+                                <p>Vigor <span>0</span></p>
+                                <div class="attribute-buttons">
+                                    <button class="decrement-button">-</button>
+                                    <button class="increment-button">+</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </article>
+
+            <article id="status-scroll" class="large-scroll">
+                <button class="large-scroll-button">Status</button>
+                <section id="character-scroll-content" class="large-scroll-content">
+
+                </section>
+            </article>
+
+            <article id="equipment-scroll" class="large-scroll">
+                <button class="large-scroll-button">Equipamentos</button>
+                <section id="equipament-scroll-content" class="large-scroll-content">
+                    <div id="equipment-scroll-content-column1">
+
+                    </div>
+                    <div id="equipment-scroll-content-column2">
+                        <div class="character-body">
+                            <div class="head"></div>
+                            <div class="torso">
+                                <div class="left-arm">
+                                    <div class="arm"></div>
+                                    <div class="left-hand hand"></div>
+                                </div>
+                                <div class="chest"></div>
+                                <div class="right-arm">
+                                    <div class="arm"></div>
+                                    <div class="right-hand hand"></div>
+                                </div>
+                            </div>
+                            <div class="legs">
+                                <div class="left-leg">
+                                    <div class="leg"></div>
+                                    <div class="left-foot foot"></div>
+                                </div>
+                                <div class="right-leg">
+                                    <div class="leg"></div>
+                                    <div class="right-foot foot"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="equipment-scroll-content-column3">
+                        
+                    </div>
+                </section>
+            </article>
+
+            <article id="acquirements-scroll" class="large-scroll">
+                <button class="large-scroll-button">Conhecimentos</button>
+                <section id="character-scroll-content" class="large-scroll-content">
+
+                </section>
+            </article>
+
+            <article id="skills-scroll" class="large-scroll">
+                <button class="large-scroll-button">Habilidades</button>
+                <section id="character-scroll-content" class="large-scroll-content">
+
+                </section>
+            </article>
+
+        </section>
+        <section id="auxiliar-content">
+
+            <section id="character-auxiliar-content" class="medium-scrolls">
+
+                <article id="resistances-scroll" class="medium-scroll">
+                    <button class="medium-scroll-button">Resistências</button>
+                    <section id="resistances-scroll-content" class="medium-scroll-content">
+
+                    </section>
+                </article>
+
+                <article id="conditions-scroll" class="medium-scroll">
+                    <button class="medium-scroll-button">Condições</button>
+                    <section id="conditions-scroll-content" class="medium-scroll-content">
+                        <ul>
+                            <li>
+                                <label for=""><input type="checkbox"> Assustado</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Cansado</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Confuso</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Congelando</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Debilitado</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Doente</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Em Recuperação</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Enraizado</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Envenenado</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Gravemente Ferido</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Imparável</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Paralisado</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Parcialmente Cego</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Queimando</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="checkbox"> Sangrando</label>
+                            </li>
+                        </ul>    
+                    </section>
+                </article>
+            </section>
+
+            <section id="equipment-auxiliar-content">
+                <h2>Mochila</h2>
+
+                <article id="backpack">
+                    <div id="primary-equipment" class="large-part">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                    <div id="secundary-equipment">
+                        <div class="small-part">
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                        </div>
+                        <div class="medium-part">
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                        </div>
+                        <div class="small-part">
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                            <div class="item"></div>
+                        </div>
+                    </div>
+                    <div class="line-part">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                </article>
+
+            </section>
+
+        </section>
+    </main>
+</body>
+</html>

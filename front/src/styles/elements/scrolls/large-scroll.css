@@ -1,0 +1,66 @@
+.large-scroll {
+    background: lightblue;
+    height: 480px;
+    width: 60px;
+    margin: 48px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    transition: 1s;
+}
+
+.large-scroll.active {
+    width: 700px;
+
+    transform: scale(1.1);
+}
+
+.large-scroll.hidden {
+    opacity: 0;
+    width: 0;
+    margin: 0;
+}
+
+.large-scroll-button {
+    background: aqua;
+    height: 480px;
+    aspect-ratio: 1 / 8;
+    border: none;
+    outline: none;
+
+    z-index: 1;
+
+    cursor: pointer;
+
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+
+.large-scroll-button::first-letter {
+    color: red;
+    font-size: 24px;
+}
+
+.large-scroll-button:hover {
+    font-size: 1.05em;
+}
+
+.large-scroll-content {
+    background: white;
+    height: 480px;
+    aspect-ratio: 4 / 3;
+
+    position: relative;
+    transform: translateX(-100%);
+
+    transition: 1s;
+}
+
+.large-scroll.active .large-scroll-content {
+    transform: translateX(0%);
+}

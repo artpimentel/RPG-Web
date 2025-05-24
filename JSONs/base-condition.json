@@ -1,0 +1,16 @@
+{
+    "id":"",
+
+    "name":"",
+    "desc":"",
+    "duration": 0,
+
+    "damage": {
+        "type": "",
+        "amount": 0
+    },
+    
+    "modifiers": [
+
+    ]
+}

@@ -1,0 +1,64 @@
+.medium-scroll {
+    background: brown;
+    height: 55px;
+    width: 420px;
+    margin: 32px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    transition: 1s;
+}
+
+.medium-scroll.active {
+    height: 475px;
+
+    transform: scale(1.1);
+}
+
+.medium-scroll.hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+}
+
+.medium-scroll-button {
+    background: pink;
+    width: 440px;
+    aspect-ratio: 8 / 1;
+    border: none;
+    outline: none;
+
+    z-index: 1;
+
+    cursor: pointer;
+
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.medium-scroll-button::first-letter {
+    color: red;
+    font-size: 24px;
+}
+
+.medium-scroll-button:hover {
+    font-size: 1.05em;
+}
+
+.medium-scroll-content {
+    background: white;
+    width: 420px;
+    aspect-ratio: 1 / 1;
+
+    position: relative;
+    transform: translateY(-100%);
+
+    transition: 1s;
+}
+
+.medium-scroll.active .medium-scroll-content {
+    transform: translateY(0%);
+}

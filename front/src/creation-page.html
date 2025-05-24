@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG | Criação de Personagem</title>
+
+    <link rel="stylesheet" href="/front/src/styles/pages/creation-page/creation-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </nav>
+    </header>
+    <section id="personal">
+
+        <article id="record">
+
+<!--        <div class="post-it">
+                <label for="">
+                    Agilidade
+                    <div class="attribute-display">
+                        <input type="number" min="-1" max="5" value="0" id="agility-input">
+                        <div class="attribute-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </label>
+                <label for="">
+                    Cognição
+                    <div class="attribute-display">
+                        <input type="number" min="-1" max="5" value="0" id="cognition-input">
+                        <div class="attribute-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </label>
+                <label for="">
+                    Força
+                    <div class="attribute-display">
+                        <input type="number" min="-1" max="5" value="0" id="strenght-input">
+                        <div class="attribute-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </label>
+                <label for="">
+                    Vigor
+                    <div class="attribute-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="attribute-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </label>
+            </div> -->
+            
+            <fieldset id="name">
+                <legend>Nome</legend>
+                <input type="text" id="name-input" placeholder="Qual seu nome?">
+            </fieldset>
+
+            <fieldset>
+                <legend>Sexo</legend>
+                <select id="sex-input">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="H">Homem</option>
+                    <option value="M">Mulher</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Nascimento</legend>
+                <input type="date" min="10" max="80">
+            </fieldset>
+
+            <fieldset>
+                <legend>Etnia</legend>
+                <select id="skin-tones">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="skin-tone1">Pálido(a)</option>
+                    <option value="skin-tone2">Branco(a)</option>
+                    <option value="skin-tone3">Moreno(a)</option>
+                    <option value="skin-tone4">Preto(a)</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Olhos</legend>
+                <select id="eye-tones">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="eye-tone1">Pretos</option>
+                    <option value="eye-tone2">Castanhos</option>
+                    <option value="eye-tone3">Âmbar</option>
+                    <option value="eye-tone4">Verdes</option>
+                    <option value="eye-tone5">Azuis</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Cabelo</legend>
+                <select id="hair-styles">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="hair-style1">Liso</option>
+                    <option value="hair-style2">Ondulado</option>
+                    <option value="hair-style3">Cacheado</option>
+                    <option value="hair-style4">Crespo</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Cor</legend>
+                <select id="hair-tones">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="hair-tone1">Loiro</option>
+                    <option value="hair-tone2">Castanho</option>
+                    <option value="hair-tone3">Preto</option>
+                    <option value="hair-tone4">Ruivo</option>
+                    <option value="hair-tone5">Grisalho</option>
+                    <option value="hair-tone6">Pintado</option>
+                </select>
+            </fieldset>
+
+            <fieldset id="photo">
+                <legend>Foto</legend>
+                <img src="" alt="" id="character_photo">
+            </fieldset>
+
+            <fieldset id="genetics">
+                <legend>Característica</legend>
+                <select id="genetics-input">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value="dedicated">Dedicado</option>
+                    <option value="slender">Esguio</option>
+                    <option value="smart">Inteligente</option>
+                    <option value="stocky">Parrudo</option>
+                    <option value="vivacious">Voraz</option>
+                </select>
+            </fieldset>
+            
+            <fieldset id="aptitude">
+                <legend>Aptidão</legend>
+                <select id="genetics-input">
+                    <option value="" selected disabled>Selecione</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </fieldset>
+
+            <fieldset id="attributes">
+                <legend>Atributos</legend>
+
+                <div class="attribute_line">
+                    Agilidade
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attribute_line">
+                    Cognição
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attribute_line">
+                    Força
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attribute_line">
+                    Postura
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attribute_line">
+                    Vigor
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset id="skills">
+                <legend>Perícias</legend>
+
+                <div class="skills_line">
+                    <input type="checkbox" id="alchemy_checkbox">
+                    <label for="alchemy_checkbox">Alquimia</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="arcane_checkbox">
+                    <label for="arcane_checkbox">Arcano</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="archery_checkbox">
+                    <label for="archery_checkbox">Arqueria</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="ballistics_checkbox">
+                    <label for="ballistics_checkbox">Balística</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="driving_checkbox">
+                    <label for="driving_checkbox">Condução</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="fencing_checkbox">
+                    <label for="fencing_checkbox">Esgrima</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="fight_checkbox">
+                    <label for="fight_checkbox">Luta</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="medicine_checkbox">
+                    <label for="medicine_checkbox">Medicina</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="mechanics_checkbox">
+                    <label for="mechanics_checkbox">Mecânica</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="survival_checkbox">
+                    <label for="survival_checkbox">Sobrevivência</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="technology_checkbox">
+                    <label for="technology_checkbox">Tecnologia</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+            <fieldset id="intellectual">
+                <legend>Intelectual</legend>
+                <div class="skills_line">
+                    <input type="checkbox" id="analyze_checkbox">
+                    <label for="analyze_checkbox">Analisar</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="listen_checkbox">
+                    <label for="listen_checkbox">Escutar</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="intuition_checkbox">
+                    <label for="intuition_checkbox">Intuição</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="investigate_checkbox">
+                    <label for="investigate_checkbox">Investigar</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="social">
+                <legend>Social</legend>
+                <div class="skills_line">
+                    <input type="checkbox" id="flirt_checkbox">
+                    <label for="flirt_checkbox">Flertar</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="intimidate_checkbox">
+                    <label for="intimidate_checkbox">Intimidar</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="lying_checkbox">
+                    <label for="lying_checkbox">Mentir</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="negotiate_checkbox">
+                    <label for="negotiate_checkbox">Negociar</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="persuade_checkbox">
+                    <label for="persuade_checkbox">Persuadir</label>
+                    <div class="value-display">
+                        <input type="number" min="-1" max="5" value="0" id="vigor-input">
+                        <div class="value-buttons">
+                            <button class="increment-button">+</button>
+                            <button class="decrement-button">-</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset id="">
+                <legend>Fobias</legend>
+
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Acrofobia</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Antropofobia</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Claustrofobia</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Hemofobia</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Mysophobia</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Nyctofobia</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Tanatofobia</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset id="">
+                <legend>Fraquezas</legend>
+
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Asma</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Audição Prejudicada</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Mobilidade Prejudicada</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Visão Prejudicada</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset id="">
+                <legend>Traumas</legend>
+
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Ansioso</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Apático</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Bipolar</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Colérico</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Mitomaníaco</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Paranóico</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Delirado</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset id="">
+                <legend>Vícios</legend>
+
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Alcoolismo</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Cafemaníaco</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Jogador Compulsivo</label>
+                </div>
+                <div class="skills_line">
+                    <input type="checkbox" id="">
+                    <label for="">Tabagismo</label>
+                </div>
+                
+            </fieldset>
+        </article>
+    </section>
+    <section id="">
+
+    </section>
+    <section id="">
+
+    </section>
+    <button id="create-button">Criar</button>
+    <footer>
+
+    </footer>
+    <script src="/front/src/scripts/pages/creation-page.js" defer></script>
+</body>
+</html>

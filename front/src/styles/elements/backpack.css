@@ -1,0 +1,62 @@
+#backpack {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.item {
+    background: black;
+
+    cursor: grab;
+}
+
+.large-part {
+    background: white;
+
+    display: grid;
+    grid-template-columns: repeat(4,48px);
+    grid-template-rows: repeat(5,48px);
+    gap: 4px;
+    
+}
+
+#secundary-equipment {
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.medium-part {
+    background: white;
+
+    display: grid;
+    grid-template-columns: repeat(4,48px);
+    grid-template-rows: repeat(3,48px);
+    gap: 4px;
+}
+
+.small-part {
+    background: white;
+
+    display: grid;
+    grid-template-columns: repeat(2,48px);
+    grid-template-rows: repeat(3,48px);
+    gap: 4px;
+}
+
+.line-part {
+    background: white;
+
+    display: grid;
+    grid-template-columns: repeat(4,48px);
+    grid-template-rows: repeat(1,48px);
+    gap: 4px;
+}

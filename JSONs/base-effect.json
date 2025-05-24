@@ -1,0 +1,18 @@
+{
+    "id": "",
+
+    "name": "",
+    "desc": "",
+    "chance": 0.0,
+
+    "target": "",
+
+    "damage": {
+        "type": "",
+        "amount": 0
+    },
+
+    "modifiers": [
+
+    ]
+}

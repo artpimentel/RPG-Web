@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG | ADM</title>
+
+    <link rel="stylesheet" href="/front/src/styles/pages/adm-page/adm-page.css">
+</head>
+<body>
+    <header>
+        <h1>Página Administrativa</h1>
+    </header>
+    <main>
+        <section id="options">
+            <article class="create-option">
+                <h2>Criar<span>Item</span></h2>
+            </article>
+            <article class="create-option">
+                <h2>Criar<span>Efeito</span></h2>
+            </article>
+            <article class="create-option">
+                <h2>Criar<span>Condição</span></h2>
+            </article>
+        </section>
+
+
+
+        <section class="creation_section">
+            <h3>Criar Item</h3>
+            <form id="item_creation">
+                <div class="line">
+                    <fieldset class="column" id="item_information">
+                        <legend>Informações</legend>
+    
+                        <label for="item_id" class="">ID: 
+                            <input type="text" id="item_id">
+                        </label>
+                    
+                        <label for="item_name">Nome: 
+                            <input type="text" id="item_name">
+                        </label>
+        
+                        <label for="item_desc">Desc: 
+                            <textarea id="item_desc" rows="3"></textarea>
+                        </label>
+        
+                        <label for="item_rarity">Raridade: 
+                            <select id="item_rarity">
+                                <option value="" selected disabled>Selecione</option>
+                                <option value="common">Comum</option>
+                                <option value="uncommon">Incomum</option>
+                                <option value="rare">Raro</option>
+                                <option value="unique">Único</option>
+                            </select>
+                        </label>
+        
+                        <label for="item_value">Valor: 
+                            <span id="item_value" class="range_value">Selecione</span>
+                            <input type="range" min="0.1" step="0.1" id="value_input">
+                        </label>
+                        
+                        <label for="item_size">Tamanho: 
+                            <select id="item_size">
+                                <option value="" selected disabled>Selecione</option>
+                                <option value="small">Pequeno</option>
+                                <option value="medium">Médio</option>
+                                <option value="large">Grande</option>
+                            </select>
+                        </label>
+        
+                        <label for="item_weight">Peso: 
+                            <span id="item_weight" class="range_value">Selecione</span>
+                            <input type="range" min="0.1" step="0.1" id="weight_input">
+                        </label>    
+                    </fieldset>
+                    <fieldset class="column" id="item_type">
+                        <legend>Tipo</legend>
+    
+                        <div id="type_options">
+                            <label for="type_weapon" class="item_types">
+                                <input type="radio" name="item_type" value="weapon" id="type_weapon"> Arma
+                            </label>
+                            <label for="type_consumable" class="item_types">
+                                <input type="radio" name="item_type" value="consumable" id="type_consumable"> Consumível
+                            </label>
+                            <label for="type_equippable" class="item_types">
+                                <input type="radio" name="item_type" value="equippable" id="type_equippable"> Equipável
+                            </label>
+                            <label for="type_material" class="item_types">
+                                <input type="radio" name="item_type" value="material" id="type_material"> Material
+                            </label>
+                            <label for="type_miscellaneous" class="item_types">
+                                <input type="radio" name="item_type" value="miscellaneous" id="type_miscellaneous"> Variado
+                            </label>
+                        </div>
+    
+                        <fieldset id="weapon_creation" class="type_creation" disabled>
+                            <legend>Arma</legend>
+    
+                            <label for="weapon_damage">Dano: 
+                                <select id="weapon_damage">
+                                    <option value="" selected disabled>Selecione</option>
+                                    <option value="1d6">1d6</option>
+                                    <option value="1d8">1d8</option>
+                                    <option value="1d10">1d10</option>
+                                    <option value="1d12">1d12</option>
+                                    <option value="2d6">2d6</option>
+                                    <option value="2d8">2d8</option>
+                                    <option value="2d10">2d10</option>
+                                    <option value="2d12">2d12</option>
+                                </select>
+                            </label>
+                            <label for="damage_type">Tipo de dano: 
+                                <select id="damage_type">
+                                    <option value="" selected disabled>Selecione</option>
+                                    <option value="">Calor</option>
+                                    <option value="">Energia</option>
+                                    <option value="fisical">Físico</option>
+                                    <option value="">Frio</option>
+                                    <option value="">Vital</option>
+                                </select>
+                            </label>
+                            <label for="weapon_range">Distância: 
+                                <select id="weapon_range">
+                                    <option value="" selected disabled>Selecione</option>
+                                    <option value="melee">Corpo a corpo</option>
+                                    <option value="close">Perto</option>
+                                    <option value="far">Longe</option>
+                                </select>
+                            </label>
+    
+                            <div class="effects_container"></div>
+                            <button type="button" class="add_effect add">Adicionar Efeito</button>
+                        </fieldset>
+                        <fieldset id="consumable_creation" class="type_creation" disabled>
+                            <legend>Consumível</legend>
+    
+                            <div class="effects_container"></div>
+                            <button type="button" class="add_effect add">Adicionar Efeito</button>
+                        </fieldset>
+                        <fieldset id="equippable_creation" class="type_creation" disabled>
+                            <legend>Equipável</legend>
+                            <label for="item_slot">Slot: 
+                                <select id="item_slot">
+                                    <option value="" selected disabled>Selecione</option>
+                                    <option value="head">Cabeça</option>
+                                    <option value="neck">Pescoço</option>
+                                    <option value="chest">Tronco</option>
+                                    <option value="arms">Braços</option>
+                                    <option value="hands">Mãos</option>
+                                    <option value="fingers">Dedos</option>
+                                    <option value="legs">Pernas</option>
+                                    <option value="feet">Pés</option>
+                                </select>
+                            </label>
+    
+                            <div class="modifiers_container"></div>
+                            <button type="button" class="add_modifier add">Adicionar Modificador</button>
+                        </fieldset>
+                        <fieldset id="material_creation" class="type_creation" disabled>
+                            <legend>Material</legend>
+                            <label for="item_quality">Qualidade:
+                                <select id="item_quality">
+                                    <option value="" selected disabled>Selecione</option>
+                                    <option value="terrible">Péssimo</option>
+                                    <option value="bad">Ruim</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="good">Bom</option>
+                                    <option value="excellent">Excelente</option>
+                                </select>
+                            </label>
+    
+                            <div class="modifiers_container"></div>
+                            <button type="button" class="add_modifier add">Adicionar Modificador</button>
+                        </fieldset>
+                        <fieldset id="miscellaneous_creation" class="type_creation" disabled>
+                            <legend>Variado</legend>
+    
+                        </fieldset>
+    
+                    </fieldset>
+                </div>
+
+                <input type="submit" id="">
+            </form>
+        </section>
+        <section class="creation-section">
+            <h3>Criar Efeito</h3>
+
+        </section>
+        <section class="creation-section">
+            <h3>Criar Condição</h3>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="/front/src/scripts/pages/adm-page.js" defer></script>
+</body>
+</html>

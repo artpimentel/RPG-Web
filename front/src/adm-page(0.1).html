@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <title>Painel de Itens - RPG</title>
+
+    <link rel="stylesheet" href="/front/src/styles/pages/adm-page/adm-page.css">
+  </head>
+  <body>
+    <h1>Criar Item</h1>
+
+    <form id="itemForm">
+      <div id="content-comlumns">
+        <div class="column">
+          <label>ID:</label>
+          <input type="text" id="item-id" required>
+  
+          <label>Nome:</label>
+          <input type="text" id="item-name" required>
+  
+          <label>Descrição:</label>
+          <textarea rows="3" id="item-desc"></textarea>
+  
+          <label>Raridade:</label>
+          <select id="item-rarity" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="comum">Comum</option>
+            <option value="incomum">Incomum</option>
+            <option value="raro">Raro</option>
+            <option value="épico">Épico</option>
+            <option value="lendário">Lendário</option>
+          </select>
+  
+          <label>Valor:</label>
+          <input type="number" min="0" placeholder="$" id="item-value">
+  
+          <label>Tamanho:</label>
+          <select id="item-size" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="small">Pequeno</option>
+            <option value="medium">Médio</option>
+            <option value="large">Grande</option>
+          </select>
+  
+          <label>Peso:</label>
+          <input type="number" step="0.1" min="0" id="item-weight" required>
+  
+          <fieldset>
+            <legend>Modificadores</legend>
+            <div id="modifiersContainer"></div>
+            <button type="button" onclick="addModifier()">Adicionar Modificador</button>
+          </fieldset>
+  
+          <fieldset>
+            <legend>Efeitos</legend>
+            <div id="effectsContainer"></div>
+            <button type="button" onclick="addEffect()">Adicionar Efeito</button>
+          </fieldset>
+  
+          <label>Quantidade:</label>
+          <input type="number" id="quantity" min="0">
+        </div>
+  
+        <div class="column">
+          <fieldset>
+            <legend><strong>Tipo de Item</strong></legend>
+  
+            <div class="inline">
+            <label><input type="radio" name="item-type" value="weapon" required> Arma</label>
+            <label><input type="radio" name="item-type" value="consumable"> Consumível</label>
+            <label><input type="radio" name="item-type" value="equippable"> Equipável</label>
+            <label><input type="radio" name="item-type" value="material"> Material</label>
+            <label><input type="radio" name="item-type" value="key"> Chave</label>
+            <label><input type="radio" name="item-type" value="miscellaneous"> Variado</label>
+            </div>
+  
+            <fieldset id="weaponFieldset" style="display:none">
+              <legend><strong>Dados de Arma</strong></legend>
+              <label>Alcance:</label>
+              <select id="range">
+                <option value="" disabled selected>Selecione</option>
+                <option value="curto">Curto</option>
+                <option value="médio">Médio</option>
+                <option value="longo">Longo</option>
+              </select>
+  
+              <label>Tipo de Dano:</label>
+              <select id="damageType">
+                <option value="" disabled selected>Selecione</option>
+                <option value="físico">Físico</option>
+                <option value="fogo">Fogo</option>
+                <option value="gelo">Gelo</option>
+                <option value="elétrico">Elétrico</option>
+                <option value="venenoso">Venenoso</option>
+                <option value="mágico">Mágico</option>
+              </select>
+  
+              <label>Dano:</label>
+              <select id="damage">
+                <option value="" disabled selected>Selecione</option>
+                <option value="1d4">1d4</option>
+                <option value="1d6">1d6</option>
+                <option value="1d8">1d8</option>
+                <option value="1d10">1d10</option>
+                <option value="1d12">1d12</option>
+              </select>
+            </fieldset>
+  
+            <fieldset id="equipFieldset" style="display:none">
+              <legend><strong>Dados de Equipável</strong></legend>
+              <label>Slot:</label>
+              <select id="slot">
+                <option value="" disabled selected>Selecione</option>
+                <option value="head">Cabeça</option>
+                <option value="neck">Pescoço</option>
+                <option value="chest">Tronco</option>
+                <option value="arms">Braços</option>
+                <option value="hands">Mãos</option>
+                <option value="fingers">Dedos</option>
+                <option value="legs">Pernas</option>
+                <option value="feet">Pés</option>
+              </select>
+            </fieldset>
+          </fieldset>
+        </div>
+  
+      </div>
+
+      <button type="submit">Adicionar Item</button>
+    </form>
+
+    <h2>Itens Criados</h2>
+    <pre id="output">[]</pre>
+
+    <div id="overlay" class="overlay" style="display:none;"></div>
+    <div id="popup" class="popup" style="display:none;">
+    <h3>Preview do Item</h3>
+    <pre id="previewData"></pre>
+    <div class="popup-buttons">
+    <button onclick="confirmItem()">Confirmar</button>
+    <button onclick="closePopup()">Cancelar</button>
+    </div>
+    </div>
+
+    <div id="toast" class="toast" style="display:none;">Item criado!</div>
+
+    <script>
+      const modifiersContainer = document.getElementById('modifiersContainer');
+      const effectsContainer = document.getElementById('effectsContainer');
+      const previewData = document.getElementById('previewData');
+      const popup = document.getElementById('popup');
+      const overlay = document.getElementById('overlay');
+      const toast = document.getElementById('toast');
+      let effectsList = [];
+      let itemPreview = null;
+      const items = [];
+
+      function addModifier() {
+        const div = document.createElement("div");
+        div.className = "modifier";
+        div.innerHTML = `
+        <select>
+        <option disabled selected>Selecione</option>
+        <option value="Agilidade">Agilidade</option>
+        <option value="Cognição">Cognição</option>
+        <option value="Força">Força</option>
+        <option value="Vigor">Vigor</option>
+        </select>
+        <select>
+        <option disabled selected>Selecione</option>
+        ${[-2,-1,0,1,2].map(v => `<option value="${v}">${v}</option>`).join("")}
+        </select>
+        <button type="button" class="remove-btn" onclick="this.parentElement.remove()">Remover</button>
+        `;
+        modifiersContainer.appendChild(div);
+      }
+
+      function addEffect() {
+      const div = document.createElement("div");
+      div.className = "effect";
+
+      const select = document.createElement("select");
+      select.innerHTML = `<option disabled selected>Selecione</option>` +
+      effectsList.map(e => `<option value="${e}">${e}</option>`).join("");
+
+      const range = document.createElement("input");
+      range.type = "range";
+      range.min = 10;
+      range.max = 50;
+      range.value = 10;
+      range.step = 5;
+
+      const label = document.createElement("span");
+      label.textContent = "10%";
+      range.oninput = () => label.textContent = `${range.value}%`;
+
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remover";
+      removeBtn.className = "remove-btn";
+      removeBtn.onclick = () => div.remove();
+
+      div.appendChild(select);
+      div.appendChild(range);
+      div.appendChild(label);
+      div.appendChild(removeBtn);
+
+      effectsContainer.appendChild(div);
+      }
+
+      async function loadEffects() {
+      try {
+      const res = await fetch("effects.json");
+      effectsList = await res.json();
+      } catch (e) {
+      console.error("Erro ao carregar effects.json:", e);
+      }
+      }
+
+      loadEffects();
+
+      const radios = document.querySelectorAll('input[name="item-type"]');
+      radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+      document.getElementById('weaponFieldset').style.display = radio.value === "weapon" ? "block" : "none";
+      document.getElementById('equipFieldset').style.display = radio.value === "equippable" ? "block" : "none";
+      });
+      });
+
+      const form = document.getElementById('itemForm');
+      const output = document.getElementById('output');
+
+      form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const getVal = id => document.getElementById(id)?.value;
+
+      const modifiers = Array.from(modifiersContainer.children).map(div => {
+      const [attr, bonus] = div.querySelectorAll("select");
+      return { attr: attr.value, bonus: parseInt(bonus.value) };
+      });
+
+      const effects = Array.from(effectsContainer.children).map(div => {
+      const [type, range] = div.querySelectorAll("select, input[type='range']");
+      return { type: type.value, chance: parseInt(range.value) };
+      });
+
+      itemPreview = {
+      id: getVal("item-id"),
+      name: getVal("item-name"),
+      desc: getVal("item-desc"),
+      rarity: getVal("item-rarity"),
+      value: parseInt(getVal("item-value")) || 0,
+      type: document.querySelector('input[name="item-type"]:checked')?.value || "",
+      size: getVal("item-size"),
+      weight: parseFloat(getVal("item-weight")) || 0,
+      slot: getVal("slot") || null,
+      weapon_data: {
+      range: getVal("range"),
+      damage: {
+      type: getVal("damageType"),
+      amount: getVal("damage")
+      }
+      },
+      modifiers,
+      effects,
+      quantity: parseInt(getVal("quantity")) || 0
+      };
+
+      previewData.textContent = JSON.stringify(itemPreview, null, 2);
+      popup.style.display = "block";
+      overlay.style.display = "block";
+      });
+
+      function closePopup() {
+      popup.style.display = "none";
+      overlay.style.display = "none";
+      itemPreview = null;
+      }
+
+      function confirmItem() {
+      if (itemPreview) {
+      items.push(itemPreview);
+      output.textContent = JSON.stringify(items, null, 2);
+      form.reset();
+      modifiersContainer.innerHTML = "";
+      effectsContainer.innerHTML = "";
+      document.getElementById('weaponFieldset').style.display = "none";
+      document.getElementById('equipFieldset').style.display = "none";
+      showToast("Item criado!");
+      }
+      closePopup();
+      }
+
+      function showToast(message) {
+      toast.textContent = message;
+      toast.style.display = "block";
+      setTimeout(() => {
+      toast.style.display = "none";
+      }, 3000);
+      }
+    </script>
+
+  </body>
+</html>

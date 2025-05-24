@@ -1,0 +1,73 @@
+.character-body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.head {
+    background: black;
+    height: 64px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+
+    cursor: grab;
+}
+
+.torso {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: top;
+    justify-content: center;
+    gap: 8px;
+}
+
+.chest {
+    background: black;
+    height: 128px;
+    aspect-ratio: 1 / 2;
+    
+    cursor: grab;
+}
+
+.legs {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.left-arm, .right-arm, .left-leg, .right-leg {
+    height: 128px;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arm, .leg {
+    background: black;
+    height: 96px;
+    aspect-ratio: 1 / 4;
+
+    cursor: grab;
+}
+
+.hand, .foot {
+    background: black;
+    height: 24px;
+    aspect-ratio: 1 / 1;
+
+    cursor: grab;
+}
+
+.left-hand, .right-hand {
+
+}
+
+.left-foot, .right-foot {
+
+}

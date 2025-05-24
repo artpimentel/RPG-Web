@@ -1,0 +1,116 @@
+{
+    "id":"",
+    "metadata": {
+        "created_by": "",
+        "created_at": "",
+        "last_modified_by": "",
+        "last_modified_at": ""
+    },
+
+    "name": "",
+    "sex": "",
+    "age": 0,
+
+    "appearance": {
+        "skin_color": "",
+        "eye_color": "",
+        "hair_style": "",
+        "hair_color": ""
+    },
+
+    "genetic": "",
+
+    "attributes": {
+        "agility": 0,
+        "cognition": 0,
+        "strength": 0,
+        "posture": 0,
+        "vigor": 0
+    },
+
+    "health": {
+        "total_health": 0,
+        "current_health": 0
+    },
+    "impetus": {
+        "total_impetus": 0,
+        "current_impetus": 0
+    },
+    "sanity": {
+        "total_sanity": 0,
+        "current_sanity": 0
+    },
+    "luck": 0,
+
+    "skills": {
+        "alchemy": 0,
+        "arcane": 0,
+        "archery": 0,
+        "ballistics": 0,
+        "driving": 0,
+        "fencing": 0,
+        "fight": 0,
+        "medicine": 0,
+        "mechanics": 0,
+        "survival": 0,
+        "technology": 0
+    },
+
+    "intellectual_capabilities": {
+        "analyze": 0,
+        "listen": 0,
+        "intuition": 0,
+        "investigate": 0
+    },
+
+    "social_capabilities": {
+        "flirt": 0,
+        "intimidate": 0,
+        "lying": 0,
+        "negotiate": 0,
+        "persuade": 0
+    },
+
+    "disadvantages": [
+
+    ],
+
+    "inventory": {
+        "equipment": {
+            "head": "",
+            "neck": "",
+            "arms": {
+                "left": "",
+                "right": ""
+            },
+            "hands": {
+                "left": "",
+                "right": ""
+            },
+            "fingers": {
+                "left": "",
+                "right": ""
+            },
+            "chest": "",
+            "hip": "",
+            "legs": {
+                "left": "",
+                "right": ""
+            },
+            "feet": {
+                "left": "",
+                "right": ""
+            }
+        },
+        "default": [
+
+        ],
+        "extra": [
+
+        ]
+    },
+
+    "conditions": [
+
+    ]
+}
